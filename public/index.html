@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bomber Online</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Bomber Online</h1>
+    <div id="status" class="status pending">Подключение...</div>
+  </header>
+
+  <div class="layout">
+    <canvas id="game"></canvas>
+
+    <aside>
+      <section class="panel">
+        <label for="name">Ваше имя</label>
+        <div class="row">
+          <input id="name" maxlength="12" placeholder="Игрок" autocomplete="off">
+          <button id="rename">OK</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Игроки</h2>
+        <ul id="players"></ul>
+      </section>
+
+      <section class="panel help">
+        <h2>Управление</h2>
+        <p><b>WASD</b> / <b>стрелки</b> — движение</p>
+        <p><b>Пробел</b> — бомба</p>
+        <p class="muted">B — +бомба, F — +радиус</p>
+      </section>
+    </aside>
+  </div>
+</div>
+<script src="client.js"></script>
+</body>
+</html>
