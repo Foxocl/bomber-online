@@ -326,6 +326,9 @@
   }
 
   window.addEventListener('keydown', (e) => {
+    // Если пользователь печатает в поле ввода, не перехватываем клавиши
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
     const dir = getDirFromKey(e.key);
     if (dir) {
       e.preventDefault();
@@ -339,6 +342,8 @@
   });
 
   window.addEventListener('keyup', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
     const dir = getDirFromKey(e.key);
     if (dir) keys.delete(dir);
   });
